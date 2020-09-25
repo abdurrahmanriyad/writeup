@@ -1,0 +1,58 @@
+{
+    "name": "abdurrahmanriyad/writeup",
+    "description": "A Laravel package to log necessary data in a request lifecycle.",
+    "keywords": [
+        "abdurrahmanriyad",
+        "writeup",
+        "laravel",
+        "debug",
+        "laravel log",
+        "log",
+        "request log",
+        "request response time",
+        "response time",
+        "write log"
+    ],
+    "homepage": "https://github.com/abdurrahmanriyad/writeup",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Abdur Rahman",
+            "email": "riyad.abdur@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdurrahmanriyad\\Writeup\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abdurrahmanriyad\\Writeup\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Abdurrahmanriyad\\Writeup\\WriteupServiceProvider"
+            ]
+        }
+    }
+}
