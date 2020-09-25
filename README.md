@@ -26,11 +26,6 @@ php artisan writeup:publish
 composer test
 ```
 
-/**
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Contributing
 
 Open issue > Solve > Pull Request > Merged
