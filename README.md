@@ -20,12 +20,6 @@ php artisan writeup:publish
  - Find writeup config file in laravel config folder and <br> 
  setup as configure as you need. 
 
-### Testing
-
-``` bash
-composer test
-```
-
 ## Contributing
 
 Open issue > Solve > Pull Request > Merged
