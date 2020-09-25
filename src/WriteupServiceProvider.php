@@ -19,7 +19,7 @@ class WriteupServiceProvider extends ServiceProvider
         }
 
 
-        if (config('writeup.run_in_production')) {
+        if (config('app.env' === 'production') && config('writeup.run_in_production')) {
             if (config('writeup.request_log.enable')) {
                 $router->pushMiddlewareToGroup('api', WriteupRequestMiddleware::class);
                 $router->pushMiddlewareToGroup('web', WriteupRequestMiddleware::class);
