@@ -15,7 +15,7 @@ class WriteupServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('writeup.php'),
-            ], 'config');
+            ], 'writeup');
         }
 
 
