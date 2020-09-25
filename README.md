@@ -15,7 +15,7 @@ composer require abdurrahmanriyad/writeup
 ## Usage
 -  Publish the assets 
 ``` php
-php artisan writeup:publish
+php artisan vendor:publish --tag=writeup
 ```
  - Find writeup config file in laravel config folder and <br> 
  setup as configure as you need. 
