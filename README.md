@@ -1,6 +1,7 @@
 # WriteUp
-
-[![Total Downloads](https://img.shields.io/packagist/dt/abdurrahmanriyad/writeup.svg?style=flat-square)](https://packagist.org/packages/abdurrahmanriyad/writeup)
+[![Packagist](https://img.shields.io/packagist/v/abdurrahmanriyad/writeup.svg)](https://packagist.org/packages/abdurrahmanriyad/writeup)
+[![Packagist](https://img.shields.io/packagist/l/abdurrahmanriyad/writeup.svg)](https://packagist.org/packages/abdurrahmanriyad/writeup)
+[![Packagist](https://img.shields.io/packagist/dm/abdurrahmanriyad/writeup.svg)](https://packagist.org/packages/abdurrahmanriyad/writeup) 
 
 A Laravel package to log necessary data in a request lifecycle.
 
