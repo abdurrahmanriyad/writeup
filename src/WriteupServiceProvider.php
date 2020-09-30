@@ -7,6 +7,28 @@ use Illuminate\Support\ServiceProvider;
 
 class WriteupServiceProvider extends ServiceProvider
 {
+
+
+    /**
+     * check if writeup is enabled for logging
+     * @return bool
+     */
+
+    protected function isWriteupEnabled()
+    {
+        $writeup_enabled = config('writeup.run_in_production');
+        $app_environment_name = config('app.env');
+
+        if (
+            $app_environment_name === "production" && $writeup_enabled ||
+            $app_environment_name && $writeup_enabled
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+    
     /**
      * @param Router $router
      */
@@ -19,7 +41,7 @@ class WriteupServiceProvider extends ServiceProvider
         }
 
 
-        if (config('writeup.run_in_production')) {
+        if ($this->isWriteupEnabled()) {
             if (config('writeup.request_log.enable')) {
                 $router->pushMiddlewareToGroup('api', WriteupRequestMiddleware::class);
                 $router->pushMiddlewareToGroup('web', WriteupRequestMiddleware::class);
