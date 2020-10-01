@@ -8,6 +8,26 @@ use Illuminate\Support\ServiceProvider;
 class WriteupServiceProvider extends ServiceProvider
 {
     /**
+     * check if writeup is enabled
+     * @return bool
+     */
+    protected function isEnabled()
+    {
+        $enabled = false;
+        $config = $this->app['config'];
+
+        if ($config->get('writeup.request_log.enable')) {
+            $enabled = true;
+        }
+
+        if ($enabled && $this->app->environment('production') && !$config->get('writeup.run_in_production')) {
+            $enabled = false;
+        }
+
+        return $enabled;
+    }
+    
+    /**
      * @param Router $router
      */
     public function boot(Router $router)
@@ -19,7 +39,7 @@ class WriteupServiceProvider extends ServiceProvider
         }
 
 
-        if (config('writeup.run_in_production')) {
+        if ($this->isEnabled()) {
             if (config('writeup.request_log.enable')) {
                 $router->pushMiddlewareToGroup('api', WriteupRequestMiddleware::class);
                 $router->pushMiddlewareToGroup('web', WriteupRequestMiddleware::class);
