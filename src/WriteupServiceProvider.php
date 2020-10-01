@@ -15,9 +15,8 @@ class WriteupServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('writeup.php'),
-            ], 'config');
+            ], 'writeup');
         }
-
 
         if ($this->isWriteupEnabled()) {
             if (config('writeup.request_log.enable')) {
@@ -45,7 +44,11 @@ class WriteupServiceProvider extends ServiceProvider
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'writeup');
     }
-
+    
+    /**
+     * check if writeup is enabled for logging
+     * @return bool
+     */
     private function isWriteupEnabled()
     {
         return !(
