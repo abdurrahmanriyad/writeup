@@ -19,7 +19,7 @@ composer require abdurrahmanriyad/writeup
 php artisan vendor:publish --tag=writeup
 ```
  - Find writeup config file in laravel config folder and <br> 
- setup as configure as you need. 
+ configure as you need. 
 
 ## Contributing
 
@@ -28,11 +28,6 @@ Open issue > Solve > Pull Request > Merged
 ### Security
 
 If you discover any security related issues, please email riyad.abdur@gmail.com instead of using the issue tracker.
-
-## Credits
-
-- [Abdur Rahman](https://github.com/abdurrahmanriyad)
-- All Contributors
 
 ## License
 
